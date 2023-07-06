@@ -36,10 +36,15 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor:
           Colors.primaries[Random().nextInt(Colors.primaries.length)].shade200,
-      appBar: AppBar(
+      appBar: AppBar(backgroundColor: Colors.grey,
         centerTitle: true,
-        title: Text("Clock App"),
+        title: Text("Digital Watch",style: TextStyle(color: Colors.white),),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed('AnalogWatch');
+          },
+          child: Icon(Icons.navigate_next)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -54,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(
-                            "https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"),
+                           "https://plus.unsplash.com/premium_photo-1668447598676-30bbd44792c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"),
                       ),),
                   alignment: Alignment.center,
                   width: 250,
