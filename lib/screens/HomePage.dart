@@ -1,3 +1,4 @@
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -13,6 +14,9 @@ class _HomePageState extends State<HomePage> {
   int h = 0;
   int m = 0;
   int s = 0;
+  int d = 0;
+  int n = 0;
+  int y = 0;
 
   MyWatch() {
     Future.delayed(Duration(seconds: 1), () {
@@ -20,6 +24,10 @@ class _HomePageState extends State<HomePage> {
         h = DateTime.now().hour;
         m = DateTime.now().minute;
         s = DateTime.now().second;
+        d = DateTime.now().day;
+        n = DateTime.now().month;
+        y = DateTime.now().year;
+
       });
       MyWatch();
     });
@@ -67,31 +75,27 @@ class _HomePageState extends State<HomePage> {
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "${h} : ",
+                            "${d} / ${n} / ${y} ",
                             style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.white70,
                                 fontSize: 35,
                                 fontWeight: FontWeight.bold),
                           ),
+                          SizedBox(width: 25),
                           Text(
-                            "${m} : ",
+                            "${h} : ${m} : ${s} ",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 35,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Text(
-                            "${s}  ",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 35,
-                                fontWeight: FontWeight.bold),
-                          ),
+
                         ],
+
                       ),
                     ),
                   ),

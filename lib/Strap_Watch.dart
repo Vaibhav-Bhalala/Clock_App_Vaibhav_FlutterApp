@@ -21,6 +21,7 @@ class _StrapWatchState extends State<StrapWatch> {
         h = DateTime.now().hour % 12;
         m = DateTime.now().minute;
         s = DateTime.now().second;
+
       });
       MyWatch();
     });
@@ -51,8 +52,8 @@ class _StrapWatchState extends State<StrapWatch> {
                       angle: (pi * 2) * (index / 24),
                       child: Divider(
                         color: Colors.blue,
-                        indent: 200,
-                        endIndent: 145,
+                        indent: MediaQuery.of(context).size.height*0.18,
+                        endIndent: MediaQuery.of(context).size.height*0.18,
                       ),
                     )),
             Transform.scale(
